@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MvcNetSqlTutorial.DBdata;
 using MvcNetSqlTutorial.Models;
 using System.Diagnostics;
 
@@ -20,6 +22,8 @@ namespace MvcNetSqlTutorial.Controllers
 
         public IActionResult Privacy()
         {
+            userContext userContext = new userContext();
+            var userData = userContext.Persons;
             return View();
         }
 
